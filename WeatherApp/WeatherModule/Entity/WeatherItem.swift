@@ -26,7 +26,7 @@ enum WeatherItem {
         case .temperature(let temp): return "\(temp)°"
         case .minTemperature(let temp): return "\(temp)°"
         case .maxTemperature(let temp): return "\(temp)°"
-        case .visibility(let value): return "\(value / 100) km"
+        case .visibility(let value): return "\(value / 1000) km"
         }
     }
     
