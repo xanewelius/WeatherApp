@@ -16,8 +16,6 @@ final class WeatherPresenter {
     private let interactor: WeatherInteractorInput
     private let router: WeatherRouterInput
     
-    private weak var detailedScreen: ShipDetailsModuleInput?
-    
     var weather: Weather?
     
     // MARK: - Initializer
@@ -56,10 +54,6 @@ extension WeatherPresenter: WeatherViewOutput {
             self.interactor.obtainData(for: city)
         }
     }
-    
-    func didSelectWeather(id: String) {
-        detailedScreen = router.presentDetails(with: id, presenter: self)
-    }
 }
 
 // MARK: - HomeInteractorOutput
@@ -95,16 +89,5 @@ extension WeatherPresenter: HomeInteractorOutput {
         }
         
         view.set(state: state)
-    }
-}
-
-// MARK: - ShipDetailsModuleOutput
-
-extension WeatherPresenter: ShipDetailsModuleOutput {
-    
-    // TODO: - Delete shipDetailsModule
-    
-    func shipDetailsModule(shipId: String, didUpdateFavoriteStatus isFavorite: Bool) {
-        
     }
 }

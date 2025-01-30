@@ -75,7 +75,7 @@ private extension WeatherViewController {
         }
         
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(8)
+            make.top.equalTo(imageView.snp.bottom).offset(-16)
             make.leading.trailing.bottom.equalToSuperview()
         }
         
@@ -127,6 +127,8 @@ private extension WeatherViewController {
         
         tableView.separatorStyle = .none
         tableView.isScrollEnabled = false
+        tableView.layer.cornerRadius = 16
+        tableView.layer.masksToBounds = true
     }
 }
 

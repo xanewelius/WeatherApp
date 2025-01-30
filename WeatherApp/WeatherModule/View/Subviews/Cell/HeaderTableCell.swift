@@ -73,7 +73,7 @@ private extension HeaderTableCell {
     
     func setupLayout() {
         cityNameLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(16)
+            make.top.equalToSuperview().offset(24)
             make.leading.equalToSuperview().offset(32)
         }
         
@@ -84,7 +84,7 @@ private extension HeaderTableCell {
         }
         
         dataLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(12)
+            make.top.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().inset(32)
         }
     }
@@ -116,15 +116,5 @@ extension HeaderTableCell {
         cityNameLabel.text = weather.cityName
         weatherDescriptionLabel.text = weather.weatherDescription
         dataLabel.text = weather.formattedDate
-//        cityNameLabel.text = weather.name
-//        weatherDescriptionLabel.text = "NOW \(weather.weather.first?.description.uppercased() ?? "")"
-//        
-//        let date = Date(timeIntervalSince1970: TimeInterval(weather.dt + weather.timezone))
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "d/M/yyyy"
-//        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
-//        let formattedDate = dateFormatter.string(from: date)
-//        
-//        dataLabel.text = formattedDate
     }
 }
